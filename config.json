@@ -1,0 +1,5 @@
+{
+    "IS_EXEC_CUSTOM_CMD": true,
+    "LINK_SRC_NODE_MODULES": "~/.node_modules",
+    "OPEN_APP": "Sublime Text 2"
+}
