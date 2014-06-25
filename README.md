@@ -21,7 +21,7 @@
 1. 安装 nodejs [window 安装地址](http://nodejs.org/) ， mac 推荐通过brew安装```brew install node```
 2. 安装 grunt-cli ```npm install -g grunt-cli```
 3. 安装 grunt-init ```npm install -g grunt-init```
-4. 将work svn下  ```/前端工具/duowan_workflow/lego``` 拷贝到```%USERPROFILE%\.grunt-init\```（Mac平台 ```~/.grunt-init/```），如果没有```.grunt-init```目录可用```mkdir .grunt-init```命令创建
+4. 将当前git克隆到本地```%USERPROFILE%\.grunt-init\```（Mac平台 ```~/.grunt-init/```），如果没有```.grunt-init```目录可用```mkdir .grunt-init```命令创建
 5. 安装 Graphics Magick(gm)，[下载地址](http://www.graphicsmagick.org/download.html) (Mac平台 ```brew install GraphicsMagick```)
 6. 安装 PhantomJS，[下载地址](http://phantomjs.org/download.html) (Mac平台 ```brew install phantomjs```)
 7. 安装 sass ```gem install sass ```
