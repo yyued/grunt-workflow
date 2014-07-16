@@ -225,9 +225,10 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
-                    style: 'compact', //nested, compact, compressed, expanded
-                    sourcemap: true,
-                    noCache: true
+                    outputStyle: 'expanded',
+                    //nested, compact, compressed, expanded
+                    sourceComments: 'map',
+                    sourceMap: true
                 },
                 files: [{
                     expand: true,
@@ -281,13 +282,13 @@ module.exports = function(grunt) {
         push_svn: {
             options: {
                 message: '初始化项目：' + pkg.name,
-                username: '%SVN_NAME%',
-                password: '%SVN_PWD%',
+                username: 'liujianxin',
+                password: 'g2551',
                 trymkdir: true
             },
             assets: {
                 src: 'dest',
-                dest: '%SVN_REMOTE_DIR%' + proj_namespace,
+                dest: 'http://svn.duowan.com:9999/svn/web/program/assets/' + proj_namespace,
                 tmp: '.tmp_svn'
             }
         }
