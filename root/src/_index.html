@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Keywords" content="多玩游戏">
-    <meta name="description" content="">
+    <meta name="description" content="多玩游戏">
     <title> <%= global.site_name%> </title>
     <link href="css/global.css" rel="stylesheet">
 </head>
@@ -13,15 +13,15 @@
     <% include partial/duowan-nav %>
     <div class="wrap">
 
-    <ul>
-    <% _.each(global.section1.items, function(item, i){ %>
-        <li><a href=" <%= item.href %>"> <%= item.name %></a></li>
-    <% }) %>
-    </ul>       
+        <ul>
+        <% _.each(global.section1.items, function(item, i){ %>
+            <li><a href=" <%= item.href %>"> <%= item.name %></a></li>
+        <% }) %>
+        </ul>
 
     </div>
     <% include partial/duowan-siteinfo %>
-
+    <script src="http://assets.dwstatic.com/common/js/jquery.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
