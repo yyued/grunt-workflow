@@ -1,6 +1,6 @@
 #多玩前端工作流
 
-版本: 0.1.3
+版本: 0.1.4
 
 ##这是什么
 
@@ -80,7 +80,7 @@
 指定端口打开一个webserver，查看的文件是在开发目录下，支持livereload，sass自动编译，ejs编译
 
 ###grunt release
-生成发布文件，执行```gunt release```生成一个dest的目录，里面包含：编译后的html，压缩css、js文件，自动生成sprit图片，替换css样式里的链接，dest里的文件是发布使用的。
+生成发布文件，执行```gunt release```生成一个dest的目录，检测样式文件里的本地资源引用，如果有无效引用则中断任务，否则执行后续任务：编译html，压缩css、js文件，自动生成sprit图片，替换css样式里的链接。dest里的文件是发布使用的。
 
 ###grunt dest
 打开一个webserver，显示dest目录
