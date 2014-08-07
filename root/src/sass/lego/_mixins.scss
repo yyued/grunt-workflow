@@ -1,6 +1,4 @@
 //
-// $Date: 2014-01-14 14:02:52 +0800 (Tue, 14 Jan 2014) $
-//
 @function getButtonColor($color) {
 	@return if( lightness($color) > 50, #333, #FFF );
 }

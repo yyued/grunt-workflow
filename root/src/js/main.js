@@ -1,19 +1,19 @@
-(function(){
+(function() {
     'use strict';
-    
+
     var main = {
-        method1 : function(){
+        method1: function() {
             alert('a');
         },
-        _method : function(){
+        _method: function() {
 
         },
-        init : function(){
+        init: function() {
             this.method1();
             //this._method();
         }
     };
 
-    if(typeof window.main === 'undefined') window.main = main
+    if (typeof window.main === 'undefined') window.main = main
 
 })();

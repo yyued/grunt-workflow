@@ -37,7 +37,7 @@ module.exports = function(grunt) {
                 underscore: true
             },
                 config_cover = ejs_static.get_files(options),
-                config_default = {}, 
+                config_default = {},
                 htmlfiles;  // local html file array
             fs.readdir(path.resolve('src/'), function(err, arr) {
                 if (err) {console.log(err)}
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         // 全局变量
-        banner: '/*! Project: '+pkg.name+'\n *  Version: '+pkg.version+'\n *  Date: <%= grunt.template.today("yyyy-mm-dd hh:MM:ss TT") %>\n *  Author: '+pkg.author.name+'\n */',
+        banner: '/*!'+'\n * @project: '+pkg.name+'\n * @version: '+pkg.version+'\n * @author:  '+pkg.author.name+'\n * @update:  <%= grunt.template.today("yyyy-mm-dd hh:MM:ss TT") %>\n */',
 
         connect: {
             site_src: {
@@ -168,7 +168,7 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: 'src/',
                 src: ['**', '!sass', '!sass/{,*/}*', '!css/*.map', '!img/psd','!img/psd/{,*/}*'],
-                dest: 'assets/src'  
+                dest: 'assets/src'
             }
         },
         autoprefixer: {
