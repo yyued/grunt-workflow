@@ -98,7 +98,7 @@ exports.template = function(grunt, init, done) {
         grunt.file.mkdir(join(init.destpath(), 'src/css'));
         grunt.file.mkdir(join(init.destpath(), 'src/img'));
         grunt.file.mkdir(join(init.destpath(), 'src/slice'));
-        grunt.file.mkdir(join(init.destpath(), 'src/js/lib'));
+        // grunt.file.mkdir(join(init.destpath(), 'src/js/lib'));
 
         // All done!
         done();

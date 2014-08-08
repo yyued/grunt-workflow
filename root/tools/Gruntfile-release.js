@@ -11,7 +11,7 @@ module.exports = function(grunt) {
     var configObj = {
 
         // 全局变量
-        banner: '/*! Project: '+pkg.name+'\n *  Version: '+pkg.version+'\n *  Date: <%= grunt.template.today("yyyy-mm-dd hh:MM:ss TT") %>\n *  Author: '+pkg.author.name+'\n */',
+        banner: '/*!'+'\n * @project : '+pkg.name+'\n * @version : '+pkg.version+'\n * @author  : '+pkg.author.name+'\n * @update  : <%= grunt.template.today("yyyy-mm-dd hh:MM:ss TT") %>\n */\r',
 
         connect: {
             site_dest: {
@@ -154,5 +154,5 @@ module.exports = function(grunt) {
             process.abort();
         }
     })
-     
+
 };
