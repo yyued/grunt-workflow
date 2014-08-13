@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     var path = require('path');
     var pkg = require('../package');
     var proj_namespace = path.join(pkg.description, pkg.name, pkg.version, '/');
-    var ASSETS_URL = 'http://lol.duowan.com/s/MMStarChannel/';
+    var ASSETS_URL = 'http://assets.dwstatic.com/'+proj_namespace;
 
     var configObj = {
         clean: {
@@ -64,6 +64,6 @@ module.exports = function(grunt) {
     // 只替换线上路径，不打包
     grunt.task.registerTask('trans', function(){
         grunt.config.merge(configObj)
-        grunt.task.run(['clean:zip', 'copy:zip_src', 'copy:zip_dest', 'concat:trans_html'])
+        grunt.task.run(['clean:zip', 'copy:zip_src', 'copy:zip_dest', 'concat:trans_html', 'compress:zip'])
     })
 };

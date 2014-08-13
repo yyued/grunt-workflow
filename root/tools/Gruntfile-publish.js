@@ -26,8 +26,8 @@ module.exports = function(grunt) {
         push_svn: {
             options: {
                 message: '初始化项目：' + pkg.name,
-                username: 'liujianxin',
-                password: 'g2551',
+                username: 'username',
+                password: 'password',
                 trymkdir: true
             },
             assets: {
