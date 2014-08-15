@@ -1,3 +1,7 @@
 .svn
 .DS_Store
 .idea
+gulpfile.js
+root/tools/Gruntfile-publish.js
+
+root/tools/Gruntfile-publish.js
