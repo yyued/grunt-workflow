@@ -72,7 +72,7 @@ exports.template = function(grunt, init, done) {
                 "grunt-contrib-copy": "~0.5.0",
                 "grunt-contrib-uglify": "~0.4.0",
                 "grunt-contrib-cssmin": "~0.9.0",
-                "grunt-adisprite": "~0.2.2",
+                "grunt-adisprite": "~0.2.3",
                 "grunt-contrib-imagemin": "~0.4.1",
                 "grunt-sass": "~0.14.0",
                 "grunt-autoprefixer": "~0.7.2",
