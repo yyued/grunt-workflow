@@ -6,6 +6,8 @@ module.exports = function(grunt) {
     var pkg = require('../package');
     var proj_namespace = path.join(pkg.description, pkg.name, pkg.version, '/');
     var ASSETS_URL = 'http://assets.dwstatic.com/'+proj_namespace;
+    var concatScript = require('./_concat-scriptlink');
+
 
     var configObj = {
         clean: {
@@ -58,12 +60,26 @@ module.exports = function(grunt) {
     // release后，zip打包
     grunt.task.registerTask('zip', function(){
         grunt.config.merge(configObj)
-        grunt.task.run(['copy:zip_src', 'copy:zip_dest', 'concat:trans_html', 'compress:zip', 'clean:zip'])
+        grunt.task.run(['clean:zip', 'copy:zip_src', 'copy:zip_dest', 'concat:trans_html', '__concatScript', 'compress:zip', 'clean:zip'])
     })
     
-    // 只替换线上路径，不打包
+    // 替换线上路径，合并script请求，不zip
+    // grunt.task.registerTask('test', function(){
+    //     grunt.config.merge(configObj)
+    //     grunt.task.run([ '__concatScript'])
+    //     // grunt.task.run(['clean:zip', 'copy:zip_src', 'copy:zip_dest', 'concat:trans_html', '__concatScript'])
+    // })
+
+    // 只替换线上路径和合并路径，不打包
     grunt.task.registerTask('trans', function(){
         grunt.config.merge(configObj)
-        grunt.task.run(['clean:zip', 'copy:zip_src', 'copy:zip_dest', 'concat:trans_html', 'compress:zip'])
+        grunt.task.run(['clean:zip', 'copy:zip_src', 'copy:zip_dest', 'concat:trans_html', '__concatScript'])
     })
+
+    // 合并指定的脚本链接
+    grunt.registerTask('__concatScript', function(){
+        concatScript()
+    })
+
+
 };
