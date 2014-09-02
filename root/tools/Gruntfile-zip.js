@@ -62,13 +62,6 @@ module.exports = function(grunt) {
         grunt.config.merge(configObj)
         grunt.task.run(['clean:zip', 'copy:zip_src', 'copy:zip_dest', 'concat:trans_html', '__concatScript', 'compress:zip', 'clean:zip'])
     })
-    
-    // 替换线上路径，合并script请求，不zip
-    // grunt.task.registerTask('test', function(){
-    //     grunt.config.merge(configObj)
-    //     grunt.task.run([ '__concatScript'])
-    //     // grunt.task.run(['clean:zip', 'copy:zip_src', 'copy:zip_dest', 'concat:trans_html', '__concatScript'])
-    // })
 
     // 只替换线上路径和合并路径，不打包
     grunt.task.registerTask('trans', function(){
