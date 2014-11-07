@@ -8,7 +8,7 @@ var _ = require('../node_modules/grunt-contrib-compress/node_modules/archiver/no
 var cwd = path.join(__dirname, '..')
 var source = path.join(cwd, 'src', 'css')
 var target = path.join(cwd, 'src')
-var targetIgnore = ['.svn', 'css', 'data', 'js', 'partial', 'sass', '.html']
+var targetIgnore = ['.svn', 'css', 'data', 'js', 'partial', 'sass', '.html', '.map']
 var errMsg
 
 // 1. sync read source dir, get [sourceList]
@@ -45,7 +45,7 @@ function getCalcSource(source){
 function getSourceList(source){
 	var sourceList = []
 	var reg = /url\(["']?(?!http[s]?)([\w\d\s!.\/\-\_]*\.[\w?#]+)["']?\)/gm
-	var files = listFiles(source)
+	var files = listFiles(source, targetIgnore)
 	_.each(files, function(f){
 		var text = fs.readFileSync(f, 'utf8')
 		while(match = reg.exec(text)){
@@ -72,7 +72,7 @@ function listFiles (f, excldList) {
 	var filelist = [], dirlist = [];
     var dir = fs.lstatSync(f).isDirectory() ? f : path.dirname(f);
     var filelistTemp = fs.readdirSync(dir).filter(function (file) {
-        return fs.statSync(path.join(dir, file)).isFile() && !_hasItem(excldList, file);
+        return fs.statSync(path.join(dir, file)).isFile() && !_hasSuffix(excldList, file);
     }).map(function(file){
     	return path.join(dir, file)
     })
@@ -90,6 +90,14 @@ function listFiles (f, excldList) {
     return filelist;
 };
 
+function _hasSuffix(arr, file){
+	var suffix = path.extname(file)
+	var result = false
+	arr.forEach(function(e){
+		if(e === suffix){result=true}
+	})
+	return result
+}
 
 function _hasItem(arr, item){
 	arr = arr||[]
