@@ -21,10 +21,9 @@
 1. 安装 nodejs [window 安装地址](http://nodejs.org/) ， mac 推荐通过brew安装```brew install node```
 2. 安装 grunt-cli ```npm install -g grunt-cli```
 3. 安装 grunt-init ```npm install -g grunt-init```
-4. 将当前git克隆到本地```%USERPROFILE%\.grunt-init\```（Mac平台 ```~/.grunt-init/```），如果没有```.grunt-init```目录可用```mkdir .grunt-init```命令创建
+4. 将当前git克隆到本地```c:\Users\{用户名}\.grunt-init\``` [[1]][1]（Mac平台 ```~/.grunt-init/```），如果没有```.grunt-init```目录可用```mkdir .grunt-init```命令创建
 5. 安装 Graphics Magick(gm)，[下载地址](http://www.graphicsmagick.org/download.html) (Mac平台 ```brew install GraphicsMagick```)
 6. 安装 PhantomJS，[下载地址](http://phantomjs.org/download.html) (Mac平台 ```brew install phantomjs```)
-7. 安装 sass ```gem install sass ```
 
 ##初始化新项目
 
@@ -86,7 +85,7 @@
 打开一个webserver，显示dest目录
 
 ###grunt assets:提交注释
-提交dest里面的静态文件（css、js、img）到静态文件服务器，提交路径为`%SVN_REMOTE_DIR%/<description>/<name>/<version>`，详见注意事项。
+提交dest里面的静态文件（css、js、img）到静态文件服务器，提交路径为`svn根目录/<description>/<name>/<version>`，详见注意事项。
 
 
 ###grunt zip
@@ -99,7 +98,7 @@
 配置文件： ```~/.grunt-init/config.json```
 
 * ```IS_EXEC_CUSTOM_CMD``` 是否启用初始化时执行默认命令，默认不启动。
-* ```LINK_SRC_NODE_MODULES``` 建立node_modules软链接的源路径。(建议mac用户指定到```~/.node_modules```， win用户指定到```%USERPROFILE%\.node_modules```)
+* ```LINK_SRC_NODE_MODULES``` 建立node_modules软链接的源路径。(建议mac用户指定到```~/.node_modules```， win用户指定到```c:\Users\{用户名}\.node_modules```)
 * ```OPEN_APP``` 初始化目录后启动APP打开当前项目。
 
 ##注意事项
@@ -111,8 +110,8 @@
 		* name，项目名，不要出现中文字符
 		* version，项目版本，默认值：1.0.0
 	
-	说明：svn-assets提交路径为`%SVN_REMOTE_DIR%/<description>/<name>/<version>`，对应线上路径为 `http://assets.dwstatic.com/<description>/<name>/<version>`
+	说明：svn-assets提交路径为`svn根目录/<description>/<name>/<version>`，对应线上路径为 `http://assets.dwstatic.com/<description>/<name>/<version>`
 	
 
 
-
+[1]: http://en.wikipedia.org/wiki/Environment_variable#Default_values
